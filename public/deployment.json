@@ -1,0 +1,54 @@
+{
+  "network": "studionet",
+  "chainId": 61999,
+  "contract": "0x755A3a2b8dE98A06E8eB44B541034767A6B47647",
+  "deploymentTx": "0x836a3d9671f8fec8666df5093e814086c3ed665d8672178821950f99b0cdd687",
+  "rpc": "https://studio.genlayer.com/api",
+  "explorer": "https://explorer-studio.genlayer.com",
+  "liveReviews": [
+    {
+      "label": "Compatible update",
+      "reviewId": "714518d5b2b8024b23e44cf6d492847c2c97f705dd314e4e95dafb75135265d9",
+      "expected": "COMPATIBLE"
+    },
+    {
+      "label": "Behavioral breaking change",
+      "reviewId": "27b13e50b0b28ba83e1e62f511e46c41d69d4b98dcf84caad0420d9f77b15268",
+      "expected": "BREAKING"
+    }
+  ],
+  "transactions": [
+    {
+      "label": "deploy",
+      "hash": "0x836a3d9671f8fec8666df5093e814086c3ed665d8672178821950f99b0cdd687"
+    },
+    {
+      "label": "create compatible",
+      "hash": "0x1d306a6cbb517cee8b043fa28020294b546ed787d56e631b9006b7384a3e211c"
+    },
+    {
+      "label": "lock compatible",
+      "hash": "0x12e1e673637ab1906def49067b856d6a0cfd44ecebbdd9ab0dec80b0de73b504"
+    },
+    {
+      "label": "assess compatible",
+      "hash": "0x7462771f701ec1c600a96d7af02373e9ef466920983fbd0f5f716bd5c305b35f"
+    },
+    {
+      "label": "create behavioral",
+      "hash": "0xbae8068f9c141768a62528b3a2aa66761b59dff6a47daae3a11730b959021776"
+    },
+    {
+      "label": "lock behavioral",
+      "hash": "0x7f7fc777766cfc686d58d4f4354e102565056404a95ad0505a0c45bd29fa00bc"
+    },
+    {
+      "label": "assess behavioral",
+      "hash": "0x805466a59895c3eb884863d7c8f3b7243e734933d14fccdc491e8f12006b1afd"
+    },
+    {
+      "label": "create unsupported",
+      "hash": "0x78c7e0126607b948ca74282918acf82e20ccc173d219501bd86b51041beaf0a8"
+    }
+  ]
+}

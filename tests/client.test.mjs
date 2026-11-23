@@ -1,0 +1,18 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import{canonical,digest,escape,stateOf,executionOf,validateBundle,verifyChain,connectWallet}from'../src/core.js';
+const fixtures=JSON.parse(fs.readFileSync('public/fixtures.json'));
+test('canonical artifact bytes match Python and pinned hashes',async()=>{for(const f of fixtures){assert.equal(canonical(f.bundle),f.raw);assert.equal(await digest(f.raw),f.reviewId)}});
+test('untrusted text is HTML escaped',()=>assert.equal(escape('<img src=x onerror="alert(1)">'),'&lt;img src=x onerror=&quot;alert(1)&quot;&gt;'));
+test('SDK numeric status uses returned name',()=>assert.equal(stateOf({status:7,statusName:'FINALIZED'}),'FINALIZED'));
+test('SDK receipt execution result extracted',()=>{assert.equal(executionOf({consensus_data:{leader_receipt:[{execution_result:'ERROR'}]}}),'ERROR');assert.equal(executionOf({consensus_data:{leader_receipt:{execution_result:'SUCCESS'}}}),'SUCCESS')});
+test('invalid OpenAPI rejected before signature',()=>{const b=structuredClone(fixtures[0].bundle);b.baseline.paths={};assert.throws(()=>validateBundle(b))});
+test('missing wallet produces actionable error',async()=>assert.rejects(connectWallet(undefined,()=>{},{}),/MetaMask is not installed/));
+test('user rejects wallet request without client creation',async()=>{let created=false;await assert.rejects(connectWallet({request:async()=>{throw Object.assign(Error('rejected'),{code:4001})}},()=>{created=true},{}));assert.equal(created,false)});
+test('wallet adapter passes actual provider/account/network to SDK',async()=>{let opts=null,network=null;const provider={request:async req=>{assert.equal(req.method,'eth_requestAccounts');return ['0x123']}};const out=await connectWallet(provider,x=>{opts=x;return{connect:async n=>network=n}},{id:61999});assert.equal(out.address,'0x123');assert.equal(opts.provider,provider);assert.equal(opts.chain.id,61999);assert.equal(network,'studionet')});
+test('empty selected account rejected',async()=>assert.rejects(connectWallet({request:async()=>[]},()=>{},{}),/No account/));
+test('hash linked receipts reject tampering and reordered history',async()=>{const a={sequence:1,previous:'0'.repeat(64),verdict:'BREAKING'};a.receipt_sha256=await digest(canonical(a));const b={sequence:2,previous:a.receipt_sha256,verdict:'INCONCLUSIVE'};b.receipt_sha256=await digest(canonical(b));assert.equal(await verifyChain([a,b]),true);assert.equal(await verifyChain([b,a]),false);assert.equal(await verifyChain([{...a,verdict:'COMPATIBLE'},b]),false)});
+const {waitFinalized}=await import('../src/core.js');
+test('accepted transaction waits through finalization',async()=>{const states=[];let n=0;await waitFinalized(async()=>({statusName:++n===1?'ACCEPTED':'FINALIZED',execution_result:'SUCCESS'}),'0xabc',s=>states.push(s),{attempts:2,sleep:async()=>{}});assert.deepEqual(states,['ACCEPTED','FINALIZED'])});
+test('finalized revert is not reported as success',async()=>assert.rejects(waitFinalized(async()=>({statusName:'FINALIZED',execution_result:'ERROR'}),'0xabc',()=>{}),/failed/));
+test('finalization without execution proof fails closed',async()=>assert.rejects(waitFinalized(async()=>({statusName:'FINALIZED'}),'0xabc',()=>{}),/unverified/));
+test('consensus failure does not become a compatibility decision',async()=>assert.rejects(waitFinalized(async()=>({statusName:'UNDETERMINED'}),'0xabc',()=>{}),/UNDETERMINED/));
+test('pending timeout retains explicit duplicate warning',async()=>assert.rejects(waitFinalized(async()=>({statusName:'PENDING'}),'0xabc',()=>{},{attempts:1,sleep:async()=>{}}),/Do not send a duplicate/));

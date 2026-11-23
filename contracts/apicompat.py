@@ -23,12 +23,33 @@ def parse(raw: str) -> dict:
     require(isinstance(value, dict), 'JSON object required')
     return value
 
-def clean(value):
-    # Descriptive changes are handled by semantic consensus, never silently trusted.
+def clean(value, named_map=False):
+    # Keep arbitrary user names and opaque extension/unsupported data intact.
+    map_fields = ['paths','properties','patternProperties','content','responses','schemas',
+                  'headers','links','callbacks','securitySchemes','requestBodies','encoding',
+                  'definitions','$defs']
+    node_fields = METHODS + ['schema','requestBody','items','additionalProperties','not',
+                  'contains','propertyNames','if','then','else','info','components',
+                  'allOf','anyOf','oneOf','prefixItems','parameters','servers','tags','security']
+    ignored = ['description','summary','example','examples','externalDocs']
     if isinstance(value, dict):
-        return {k: clean(v) for k, v in value.items() if k not in ['description', 'summary', 'example', 'examples', 'externalDocs']}
+        result = {}
+        for key, val in value.items():
+            if named_map:
+                result[key] = clean(val)
+            elif key not in ignored:
+                if key in map_fields and isinstance(val, dict):
+                    result[key] = clean(val, True)
+                elif key == 'parameters' and isinstance(val, dict):
+                    result[key] = clean(val, True)
+                elif key in node_fields:
+                    result[key] = clean(val)
+                else:
+                    # Unknown dictionaries/arrays may contain data named description.
+                    result[key] = val
+        return result
     if isinstance(value, list):
-        return [clean(v) for v in value]
+        return [clean(val) for val in value]
     return value
 
 def structural(old: dict, new: dict) -> dict:
