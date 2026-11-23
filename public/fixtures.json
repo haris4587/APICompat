@@ -1,0 +1,650 @@
+[
+  {
+    "id": "compatible",
+    "bundle": {
+      "baseline": {
+        "info": {
+          "title": "Parcel API",
+          "version": "1.0.0"
+        },
+        "openapi": "3.0.3",
+        "paths": {
+          "/parcels": {
+            "get": {
+              "description": "Lists parcels using cursor pagination. Default page size is 20.",
+              "parameters": [
+                {
+                  "in": "query",
+                  "name": "cursor",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "properties": {
+                          "items": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "next_cursor": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "items",
+                          "next_cursor"
+                        ],
+                        "type": "object"
+                      }
+                    }
+                  },
+                  "description": "Parcel page"
+                }
+              }
+            }
+          }
+        }
+      },
+      "candidate": {
+        "info": {
+          "title": "Parcel API",
+          "version": "1.1.0"
+        },
+        "openapi": "3.0.3",
+        "paths": {
+          "/parcels": {
+            "get": {
+              "description": "Lists parcels using cursor pagination. Default page size is 20.",
+              "parameters": [
+                {
+                  "in": "query",
+                  "name": "cursor",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "in": "query",
+                  "name": "trace",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "properties": {
+                          "items": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "next_cursor": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "items",
+                          "next_cursor"
+                        ],
+                        "type": "object"
+                      }
+                    }
+                  },
+                  "description": "Parcel page"
+                }
+              }
+            }
+          }
+        }
+      },
+      "notes": "Pagination, defaults, units, authentication, rate limits, error semantics and ordering are unchanged. Existing cursor clients work unchanged. Adds only an optional trace parameter.",
+      "policy": "Existing clients must continue to work without code changes. Preserve pagination, defaults, units, auth, rate limits and error semantics. Additive optional request fields and additive response fields are allowed. Removing documented fields or operations is breaking.",
+      "title": "Parcel API \u00b7 Compatible update",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/haris4587/APICompat/cc2fe601842570ab18184ea947069148057296df/public/evidence/compatible.json",
+          "sha256": "c0e2366043c7f7b4bab09742b0cc810c4eb3834d1d82554fed8b4d4f7dcc4e3a",
+          "bytes": 1591
+        }
+      ]
+    },
+    "raw": "{\"baseline\":{\"info\":{\"title\":\"Parcel API\",\"version\":\"1.0.0\"},\"openapi\":\"3.0.3\",\"paths\":{\"/parcels\":{\"get\":{\"description\":\"Lists parcels using cursor pagination. Default page size is 20.\",\"parameters\":[{\"in\":\"query\",\"name\":\"cursor\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"items\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"next_cursor\":{\"type\":\"string\"}},\"required\":[\"items\",\"next_cursor\"],\"type\":\"object\"}}},\"description\":\"Parcel page\"}}}}}},\"candidate\":{\"info\":{\"title\":\"Parcel API\",\"version\":\"1.1.0\"},\"openapi\":\"3.0.3\",\"paths\":{\"/parcels\":{\"get\":{\"description\":\"Lists parcels using cursor pagination. Default page size is 20.\",\"parameters\":[{\"in\":\"query\",\"name\":\"cursor\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"in\":\"query\",\"name\":\"trace\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"items\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"next_cursor\":{\"type\":\"string\"}},\"required\":[\"items\",\"next_cursor\"],\"type\":\"object\"}}},\"description\":\"Parcel page\"}}}}}},\"notes\":\"Pagination, defaults, units, authentication, rate limits, error semantics and ordering are unchanged. Existing cursor clients work unchanged. Adds only an optional trace parameter.\",\"policy\":\"Existing clients must continue to work without code changes. Preserve pagination, defaults, units, auth, rate limits and error semantics. Additive optional request fields and additive response fields are allowed. Removing documented fields or operations is breaking.\",\"sources\":[{\"bytes\":1591,\"sha256\":\"c0e2366043c7f7b4bab09742b0cc810c4eb3834d1d82554fed8b4d4f7dcc4e3a\",\"url\":\"https://raw.githubusercontent.com/haris4587/APICompat/cc2fe601842570ab18184ea947069148057296df/public/evidence/compatible.json\"}],\"title\":\"Parcel API \\u00b7 Compatible update\"}",
+    "reviewId": "714518d5b2b8024b23e44cf6d492847c2c97f705dd314e4e95dafb75135265d9",
+    "expected": "COMPATIBLE"
+  },
+  {
+    "id": "breaking",
+    "bundle": {
+      "baseline": {
+        "info": {
+          "title": "Parcel API",
+          "version": "1.0.0"
+        },
+        "openapi": "3.0.3",
+        "paths": {
+          "/parcels": {
+            "get": {
+              "description": "Lists parcels using cursor pagination. Default page size is 20.",
+              "parameters": [
+                {
+                  "in": "query",
+                  "name": "cursor",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "properties": {
+                          "items": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "next_cursor": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "items",
+                          "next_cursor"
+                        ],
+                        "type": "object"
+                      }
+                    }
+                  },
+                  "description": "Parcel page"
+                }
+              }
+            }
+          }
+        }
+      },
+      "candidate": {
+        "info": {
+          "title": "Parcel API",
+          "version": "1.1.0"
+        },
+        "openapi": "3.0.3",
+        "paths": {
+          "/parcels": {
+            "get": {
+              "description": "Lists parcels using cursor pagination. Default page size is 20.",
+              "parameters": [
+                {
+                  "in": "query",
+                  "name": "cursor",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "in": "query",
+                  "name": "trace",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "properties": {
+                          "items": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "next_cursor": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "items",
+                          "next_cursor"
+                        ],
+                        "type": "object"
+                      }
+                    }
+                  },
+                  "description": "Parcel page"
+                }
+              }
+            }
+          }
+        }
+      },
+      "notes": "The cursor query parameter is now mandatory for all requests. Requests without cursor return HTTP 400.",
+      "policy": "Existing clients must continue to work without code changes. Preserve pagination, defaults, units, auth, rate limits and error semantics. Additive optional request fields and additive response fields are allowed. Removing documented fields or operations is breaking.",
+      "title": "Parcel API \u00b7 Breaking update",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/haris4587/APICompat/cc2fe601842570ab18184ea947069148057296df/public/evidence/breaking.json",
+          "sha256": "b29560d82bb9b13a52d998e1900c29eba3125e2793d9f39e130eec26e7f9de5f",
+          "bytes": 1512
+        }
+      ]
+    },
+    "raw": "{\"baseline\":{\"info\":{\"title\":\"Parcel API\",\"version\":\"1.0.0\"},\"openapi\":\"3.0.3\",\"paths\":{\"/parcels\":{\"get\":{\"description\":\"Lists parcels using cursor pagination. Default page size is 20.\",\"parameters\":[{\"in\":\"query\",\"name\":\"cursor\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"items\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"next_cursor\":{\"type\":\"string\"}},\"required\":[\"items\",\"next_cursor\"],\"type\":\"object\"}}},\"description\":\"Parcel page\"}}}}}},\"candidate\":{\"info\":{\"title\":\"Parcel API\",\"version\":\"1.1.0\"},\"openapi\":\"3.0.3\",\"paths\":{\"/parcels\":{\"get\":{\"description\":\"Lists parcels using cursor pagination. Default page size is 20.\",\"parameters\":[{\"in\":\"query\",\"name\":\"cursor\",\"required\":true,\"schema\":{\"type\":\"string\"}},{\"in\":\"query\",\"name\":\"trace\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"items\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"next_cursor\":{\"type\":\"string\"}},\"required\":[\"items\",\"next_cursor\"],\"type\":\"object\"}}},\"description\":\"Parcel page\"}}}}}},\"notes\":\"The cursor query parameter is now mandatory for all requests. Requests without cursor return HTTP 400.\",\"policy\":\"Existing clients must continue to work without code changes. Preserve pagination, defaults, units, auth, rate limits and error semantics. Additive optional request fields and additive response fields are allowed. Removing documented fields or operations is breaking.\",\"sources\":[{\"bytes\":1512,\"sha256\":\"b29560d82bb9b13a52d998e1900c29eba3125e2793d9f39e130eec26e7f9de5f\",\"url\":\"https://raw.githubusercontent.com/haris4587/APICompat/cc2fe601842570ab18184ea947069148057296df/public/evidence/breaking.json\"}],\"title\":\"Parcel API \\u00b7 Breaking update\"}",
+    "reviewId": "931567c75ac06bc4d58075e8eab872868607e6dfe6154ffc6fc4aee346de8769",
+    "expected": "BREAKING"
+  },
+  {
+    "id": "behavioral",
+    "bundle": {
+      "baseline": {
+        "info": {
+          "title": "Parcel API",
+          "version": "1.0.0"
+        },
+        "openapi": "3.0.3",
+        "paths": {
+          "/parcels": {
+            "get": {
+              "description": "Lists parcels using cursor pagination. Default page size is 20.",
+              "parameters": [
+                {
+                  "in": "query",
+                  "name": "cursor",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "properties": {
+                          "items": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "next_cursor": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "items",
+                          "next_cursor"
+                        ],
+                        "type": "object"
+                      }
+                    }
+                  },
+                  "description": "Parcel page"
+                }
+              }
+            }
+          }
+        }
+      },
+      "candidate": {
+        "info": {
+          "title": "Parcel API",
+          "version": "1.1.0"
+        },
+        "openapi": "3.0.3",
+        "paths": {
+          "/parcels": {
+            "get": {
+              "description": "Lists parcels using page-number pagination.",
+              "parameters": [
+                {
+                  "in": "query",
+                  "name": "cursor",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "in": "query",
+                  "name": "trace",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "properties": {
+                          "items": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "next_cursor": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "items",
+                          "next_cursor"
+                        ],
+                        "type": "object"
+                      }
+                    }
+                  },
+                  "description": "Parcel page"
+                }
+              }
+            }
+          }
+        }
+      },
+      "notes": "Pagination now uses page numbers instead of opaque cursors. Existing cursor values are ignored. Clients must migrate before upgrading.",
+      "policy": "Existing clients must continue to work without code changes. Preserve pagination, defaults, units, auth, rate limits and error semantics. Additive optional request fields and additive response fields are allowed. Removing documented fields or operations is breaking.",
+      "title": "Parcel API \u00b7 Behavioral update",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/haris4587/APICompat/cc2fe601842570ab18184ea947069148057296df/public/evidence/behavioral.json",
+          "sha256": "bc93bd180c4103577587858f4c0e53b4be0ff80c542586cbacf6c8fdde7d8b65",
+          "bytes": 1525
+        }
+      ]
+    },
+    "raw": "{\"baseline\":{\"info\":{\"title\":\"Parcel API\",\"version\":\"1.0.0\"},\"openapi\":\"3.0.3\",\"paths\":{\"/parcels\":{\"get\":{\"description\":\"Lists parcels using cursor pagination. Default page size is 20.\",\"parameters\":[{\"in\":\"query\",\"name\":\"cursor\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"items\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"next_cursor\":{\"type\":\"string\"}},\"required\":[\"items\",\"next_cursor\"],\"type\":\"object\"}}},\"description\":\"Parcel page\"}}}}}},\"candidate\":{\"info\":{\"title\":\"Parcel API\",\"version\":\"1.1.0\"},\"openapi\":\"3.0.3\",\"paths\":{\"/parcels\":{\"get\":{\"description\":\"Lists parcels using page-number pagination.\",\"parameters\":[{\"in\":\"query\",\"name\":\"cursor\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"in\":\"query\",\"name\":\"trace\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"items\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"next_cursor\":{\"type\":\"string\"}},\"required\":[\"items\",\"next_cursor\"],\"type\":\"object\"}}},\"description\":\"Parcel page\"}}}}}},\"notes\":\"Pagination now uses page numbers instead of opaque cursors. Existing cursor values are ignored. Clients must migrate before upgrading.\",\"policy\":\"Existing clients must continue to work without code changes. Preserve pagination, defaults, units, auth, rate limits and error semantics. Additive optional request fields and additive response fields are allowed. Removing documented fields or operations is breaking.\",\"sources\":[{\"bytes\":1525,\"sha256\":\"bc93bd180c4103577587858f4c0e53b4be0ff80c542586cbacf6c8fdde7d8b65\",\"url\":\"https://raw.githubusercontent.com/haris4587/APICompat/cc2fe601842570ab18184ea947069148057296df/public/evidence/behavioral.json\"}],\"title\":\"Parcel API \\u00b7 Behavioral update\"}",
+    "reviewId": "27b13e50b0b28ba83e1e62f511e46c41d69d4b98dcf84caad0420d9f77b15268",
+    "expected": "BREAKING"
+  },
+  {
+    "id": "unsupported",
+    "bundle": {
+      "baseline": {
+        "info": {
+          "title": "Parcel API",
+          "version": "1.0.0"
+        },
+        "openapi": "3.0.3",
+        "paths": {
+          "/parcels": {
+            "get": {
+              "description": "Lists parcels using cursor pagination. Default page size is 20.",
+              "parameters": [
+                {
+                  "in": "query",
+                  "name": "cursor",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "properties": {
+                          "items": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "next_cursor": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "items",
+                          "next_cursor"
+                        ],
+                        "type": "object"
+                      }
+                    }
+                  },
+                  "description": "Parcel page"
+                }
+              }
+            }
+          }
+        }
+      },
+      "candidate": {
+        "info": {
+          "title": "Parcel API",
+          "version": "1.1.0"
+        },
+        "openapi": "3.0.3",
+        "paths": {
+          "/parcels": {
+            "get": {
+              "description": "Lists parcels using cursor pagination. Default page size is 20.",
+              "parameters": [
+                {
+                  "in": "query",
+                  "name": "cursor",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "in": "query",
+                  "name": "trace",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "oneOf": [
+                          {
+                            "type": "object"
+                          },
+                          {
+                            "type": "array"
+                          }
+                        ],
+                        "properties": {
+                          "items": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "next_cursor": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "items",
+                          "next_cursor"
+                        ],
+                        "type": "object"
+                      }
+                    }
+                  },
+                  "description": "Parcel page"
+                }
+              }
+            }
+          }
+        }
+      },
+      "notes": "Pagination, defaults, units, authentication, rate limits, error semantics and ordering are unchanged. Existing cursor clients work unchanged. Adds only an optional trace parameter.",
+      "policy": "Existing clients must continue to work without code changes. Preserve pagination, defaults, units, auth, rate limits and error semantics. Additive optional request fields and additive response fields are allowed. Removing documented fields or operations is breaking.",
+      "title": "Parcel API \u00b7 Unsupported update",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/haris4587/APICompat/cc2fe601842570ab18184ea947069148057296df/public/evidence/unsupported.json",
+          "sha256": "2e5a9afe298f2cd8a80f77f8c2c0533421547c9d8a4ee33a950396e5dd7ac109",
+          "bytes": 1636
+        }
+      ]
+    },
+    "raw": "{\"baseline\":{\"info\":{\"title\":\"Parcel API\",\"version\":\"1.0.0\"},\"openapi\":\"3.0.3\",\"paths\":{\"/parcels\":{\"get\":{\"description\":\"Lists parcels using cursor pagination. Default page size is 20.\",\"parameters\":[{\"in\":\"query\",\"name\":\"cursor\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"items\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"next_cursor\":{\"type\":\"string\"}},\"required\":[\"items\",\"next_cursor\"],\"type\":\"object\"}}},\"description\":\"Parcel page\"}}}}}},\"candidate\":{\"info\":{\"title\":\"Parcel API\",\"version\":\"1.1.0\"},\"openapi\":\"3.0.3\",\"paths\":{\"/parcels\":{\"get\":{\"description\":\"Lists parcels using cursor pagination. Default page size is 20.\",\"parameters\":[{\"in\":\"query\",\"name\":\"cursor\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"in\":\"query\",\"name\":\"trace\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"oneOf\":[{\"type\":\"object\"},{\"type\":\"array\"}],\"properties\":{\"items\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"next_cursor\":{\"type\":\"string\"}},\"required\":[\"items\",\"next_cursor\"],\"type\":\"object\"}}},\"description\":\"Parcel page\"}}}}}},\"notes\":\"Pagination, defaults, units, authentication, rate limits, error semantics and ordering are unchanged. Existing cursor clients work unchanged. Adds only an optional trace parameter.\",\"policy\":\"Existing clients must continue to work without code changes. Preserve pagination, defaults, units, auth, rate limits and error semantics. Additive optional request fields and additive response fields are allowed. Removing documented fields or operations is breaking.\",\"sources\":[{\"bytes\":1636,\"sha256\":\"2e5a9afe298f2cd8a80f77f8c2c0533421547c9d8a4ee33a950396e5dd7ac109\",\"url\":\"https://raw.githubusercontent.com/haris4587/APICompat/cc2fe601842570ab18184ea947069148057296df/public/evidence/unsupported.json\"}],\"title\":\"Parcel API \\u00b7 Unsupported update\"}",
+    "reviewId": "56fd1c1c4acab9de7fd8956dbd5a3d0a8bfd6afab7651093c41deee68a183886",
+    "expected": "INCONCLUSIVE"
+  },
+  {
+    "id": "insufficient",
+    "bundle": {
+      "baseline": {
+        "info": {
+          "title": "Parcel API",
+          "version": "1.0.0"
+        },
+        "openapi": "3.0.3",
+        "paths": {
+          "/parcels": {
+            "get": {
+              "description": "Lists parcels using cursor pagination. Default page size is 20.",
+              "parameters": [
+                {
+                  "in": "query",
+                  "name": "cursor",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "properties": {
+                          "items": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "next_cursor": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "items",
+                          "next_cursor"
+                        ],
+                        "type": "object"
+                      }
+                    }
+                  },
+                  "description": "Parcel page"
+                }
+              }
+            }
+          }
+        }
+      },
+      "candidate": {
+        "info": {
+          "title": "Parcel API",
+          "version": "1.1.0"
+        },
+        "openapi": "3.0.3",
+        "paths": {
+          "/parcels": {
+            "get": {
+              "description": "Lists parcels using cursor pagination. Default page size is 20.",
+              "parameters": [
+                {
+                  "in": "query",
+                  "name": "cursor",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "in": "query",
+                  "name": "trace",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "properties": {
+                          "items": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "next_cursor": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "items",
+                          "next_cursor"
+                        ],
+                        "type": "object"
+                      }
+                    }
+                  },
+                  "description": "Parcel page"
+                }
+              }
+            }
+          }
+        }
+      },
+      "notes": "Performance improvements and assorted changes.",
+      "policy": "Existing clients must continue to work without code changes. Preserve pagination, defaults, units, auth, rate limits and error semantics. Additive optional request fields and additive response fields are allowed. Removing documented fields or operations is breaking.",
+      "title": "Parcel API \u00b7 Insufficient update",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/haris4587/APICompat/cc2fe601842570ab18184ea947069148057296df/public/evidence/insufficient.json",
+          "sha256": "1471255be728b275b84c0a372e2da97e42a7008d7d524d626756265276756963",
+          "bytes": 1457
+        }
+      ]
+    },
+    "raw": "{\"baseline\":{\"info\":{\"title\":\"Parcel API\",\"version\":\"1.0.0\"},\"openapi\":\"3.0.3\",\"paths\":{\"/parcels\":{\"get\":{\"description\":\"Lists parcels using cursor pagination. Default page size is 20.\",\"parameters\":[{\"in\":\"query\",\"name\":\"cursor\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"items\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"next_cursor\":{\"type\":\"string\"}},\"required\":[\"items\",\"next_cursor\"],\"type\":\"object\"}}},\"description\":\"Parcel page\"}}}}}},\"candidate\":{\"info\":{\"title\":\"Parcel API\",\"version\":\"1.1.0\"},\"openapi\":\"3.0.3\",\"paths\":{\"/parcels\":{\"get\":{\"description\":\"Lists parcels using cursor pagination. Default page size is 20.\",\"parameters\":[{\"in\":\"query\",\"name\":\"cursor\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"in\":\"query\",\"name\":\"trace\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"items\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"next_cursor\":{\"type\":\"string\"}},\"required\":[\"items\",\"next_cursor\"],\"type\":\"object\"}}},\"description\":\"Parcel page\"}}}}}},\"notes\":\"Performance improvements and assorted changes.\",\"policy\":\"Existing clients must continue to work without code changes. Preserve pagination, defaults, units, auth, rate limits and error semantics. Additive optional request fields and additive response fields are allowed. Removing documented fields or operations is breaking.\",\"sources\":[{\"bytes\":1457,\"sha256\":\"1471255be728b275b84c0a372e2da97e42a7008d7d524d626756265276756963\",\"url\":\"https://raw.githubusercontent.com/haris4587/APICompat/cc2fe601842570ab18184ea947069148057296df/public/evidence/insufficient.json\"}],\"title\":\"Parcel API \\u00b7 Insufficient update\"}",
+    "reviewId": "a763ef254e5a0bdb6bae730baf7d2fada91e3aa30764d33edc359ef032785d60",
+    "expected": "INCONCLUSIVE"
+  }
+]
