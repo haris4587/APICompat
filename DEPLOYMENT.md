@@ -2,12 +2,12 @@
 
 Network: GenLayer Studionet, chain ID **61999**.
 
-- Contract: [`0x755A3a2b8dE98A06E8eB44B541034767A6B47647`](https://explorer-studio.genlayer.com/address/0x755A3a2b8dE98A06E8eB44B541034767A6B47647)
-- Deployment: [`0x836a3d9671f8fec8666df5093e814086c3ed665d8672178821950f99b0cdd687`](https://explorer-studio.genlayer.com/transactions/0x836a3d9671f8fec8666df5093e814086c3ed665d8672178821950f99b0cdd687)
+- Contract: [`0xfbf25Bae6d94E20A6bDB13096D7927225eAA1d83`](https://explorer-studio.genlayer.com/address/0xfbf25Bae6d94E20A6bDB13096D7927225eAA1d83)
+- Deployment: [`0xfdb4ee78fe030ae3565c72fd33e1aefe5d7662fd054d65106a102fcfc854f9d1`](https://explorer-studio.genlayer.com/transactions/0xfdb4ee78fe030ae3565c72fd33e1aefe5d7662fd054d65106a102fcfc854f9d1)
 - RPC: `https://studio.genlayer.com/api`
 - Website: https://apicompat.mohamedansaf222.chatgpt.site
 
-The deployment used GenLayer Studio’s inbuilt account `0x67Da51Fd9AC1d52F34F5d01d06da8548979fC514`, Normal (Full Consensus), with no constructor arguments. Source is pinned to the dependency in the Python file’s first line. The original development instance at `0xa66a90517Bb8511e22402ff0714397eB627F40C6` is superseded and is not the website’s configured deployment.
+The deployment used GenLayer Studio’s inbuilt account `0x67Da51Fd9AC1d52F34F5d01d06da8548979fC514`, Normal (Full Consensus), with no constructor arguments. Source is pinned to the dependency in the Python file’s first line. Earlier development instances are superseded and are not the website’s configured deployment. The release source was verified byte-for-byte against the deployed contract.
 
 ## Reproduce
 

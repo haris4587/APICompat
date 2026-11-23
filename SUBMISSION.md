@@ -14,7 +14,7 @@ Open the website, choose Reviews & receipts and load a published example. Inspec
 
 - Website: https://apicompat.mohamedansaf222.chatgpt.site
 - GitHub: https://github.com/haris4587/APICompat
-- Contract explorer: https://explorer-studio.genlayer.com/address/0x755A3a2b8dE98A06E8eB44B541034767A6B47647
+- Contract explorer: https://explorer-studio.genlayer.com/address/0xfbf25Bae6d94E20A6bDB13096D7927225eAA1d83
 - Source: `contracts/apicompat.py`
 - Reproducible live evidence: `docs/live-evidence.json`
 - Validation scope: `docs/QA.md`

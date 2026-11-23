@@ -3,7 +3,7 @@
 **Ship the update. Keep the promise.** APICompat helps API publishers and integration owners resolve compatibility disputes using fixed evidence, deterministic checks, independent GenLayer reasoning, and immutable receipts.
 
 - [Website](https://apicompat.mohamedansaf222.chatgpt.site)
-- [Studionet contract](https://explorer-studio.genlayer.com/address/0x755A3a2b8dE98A06E8eB44B541034767A6B47647)
+- [Studionet contract](https://explorer-studio.genlayer.com/address/0xfbf25Bae6d94E20A6bDB13096D7927225eAA1d83)
 - [Live evidence](docs/live-evidence.json) · [Submission notes](SUBMISSION.md) · [Security](SECURITY.md) · [Deployment](DEPLOYMENT.md)
 
 ## The trust problem
@@ -39,7 +39,7 @@ If GenLayer cannot reach consensus, the transaction may fail or remain undetermi
 
 OpenAPI 3.0/3.1 JSON; 1–40 paths; at most 60,000 UTF-8 bytes for the entire bundle. Checks cover removed paths/operations, removed parameters under a conservative closed-world rule, optional-to-required and newly required inputs, request-body requirements and media removals, schema type changes, nullability direction, request-enum narrowing, response-enum widening, required-field direction, removed properties, arrays, and documented-response removal.
 
-References are not resolved: any `$ref` makes an otherwise non-breaking assessment INCONCLUSIVE. Changed composition, advanced constraints, serialization, response metadata, security, components, and other unsupported constructs also prevent a COMPATIBLE verdict. A known structural break may still establish BREAKING even if other structures are unsupported. The engine is not a complete OpenAPI conformance validator. Supply well-formed specifications; malformed structures can reject the transaction. Some supported changes are conservatively classified as breaking even where a specific client might tolerate them.
+References are not resolved: any `$ref` makes an otherwise non-breaking assessment INCONCLUSIVE. Changed composition, advanced constraints, serialization, response metadata, security, components, and other unsupported constructs also prevent a COMPATIBLE verdict. A known structural break may still establish BREAKING even if other structures are unsupported. Structural safety rules are fixed in this version and cannot be relaxed by policy text. The engine is not a complete OpenAPI conformance validator. Supply well-formed specifications; malformed structures can reject the transaction. Some supported changes are conservatively classified as breaking even where a specific client might tolerate them.
 
 ### Semantic consensus
 

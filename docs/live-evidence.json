@@ -1,0 +1,387 @@
+{
+  "contract": "0xfbf25Bae6d94E20A6bDB13096D7927225eAA1d83",
+  "network": "studionet",
+  "sourceSha256": "54041c0253230ad8e5eeb292e76241766aef6f3f15516c83e09873d77de1233e",
+  "sourceMatchesDeployment": true,
+  "schema": {
+    "ctor": {
+      "params": [],
+      "kwparams": {}
+    },
+    "methods": {
+      "assess_review": {
+        "params": [
+          [
+            "review_id",
+            "string"
+          ]
+        ],
+        "kwparams": {},
+        "readonly": false,
+        "ret": "null",
+        "payable": false
+      },
+      "challenge_review": {
+        "params": [
+          [
+            "review_id",
+            "string"
+          ],
+          [
+            "reason",
+            "string"
+          ]
+        ],
+        "kwparams": {},
+        "readonly": false,
+        "ret": "null",
+        "payable": false
+      },
+      "create_review": {
+        "params": [
+          [
+            "bundle_json",
+            "string"
+          ],
+          [
+            "expected_sha256",
+            "string"
+          ]
+        ],
+        "kwparams": {},
+        "readonly": false,
+        "ret": "null",
+        "payable": false
+      },
+      "get_count": {
+        "params": [],
+        "kwparams": {},
+        "readonly": true,
+        "ret": "int"
+      },
+      "get_receipt": {
+        "params": [
+          [
+            "review_id",
+            "string"
+          ],
+          [
+            "sequence",
+            "int"
+          ]
+        ],
+        "kwparams": {},
+        "readonly": true,
+        "ret": "string"
+      },
+      "get_review": {
+        "params": [
+          [
+            "review_id",
+            "string"
+          ]
+        ],
+        "kwparams": {},
+        "readonly": true,
+        "ret": "string"
+      },
+      "lock_review": {
+        "params": [
+          [
+            "review_id",
+            "string"
+          ]
+        ],
+        "kwparams": {},
+        "readonly": false,
+        "ret": "null",
+        "payable": false
+      }
+    }
+  },
+  "transactions": [
+    {
+      "label": "deploy",
+      "hash": "0xfdb4ee78fe030ae3565c72fd33e1aefe5d7662fd054d65106a102fcfc854f9d1",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "mode": "NORMAL",
+      "validatorCount": 5,
+      "votes": [
+        "AGREE",
+        "AGREE",
+        "AGREE",
+        "IDLE",
+        "IDLE"
+      ]
+    },
+    {
+      "label": "create compatible",
+      "hash": "0xbe754476a88c9a672cf96755b744094c1245f5e924ff13518d3c9aec8f14b499",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "mode": "NORMAL",
+      "validatorCount": 5,
+      "votes": [
+        "AGREE",
+        "AGREE",
+        "IDLE",
+        "IDLE",
+        "AGREE"
+      ]
+    },
+    {
+      "label": "lock compatible",
+      "hash": "0x77a56c05b2ceca50c6a1847cd52a0a8e892a14b2a0a06d6cd0d807946400148c",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "mode": "NORMAL",
+      "validatorCount": 5,
+      "votes": [
+        "AGREE",
+        "IDLE",
+        "AGREE",
+        "IDLE",
+        "AGREE"
+      ]
+    },
+    {
+      "label": "create behavioral",
+      "hash": "0x44bfe6ba97633ddbdc646b53d0c54af4756d120a97f3048fe0abd9e0dea2e2c7",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "mode": "NORMAL",
+      "validatorCount": 5,
+      "votes": [
+        "AGREE",
+        "IDLE",
+        "AGREE",
+        "AGREE",
+        "IDLE"
+      ]
+    },
+    {
+      "label": "assess compatible",
+      "hash": "0xef9f503c632bd326696b4ac53c88c5970a794bcbf1a5d0ecfb1ccfa8a2f0cca3",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "mode": "NORMAL",
+      "validatorCount": 5,
+      "votes": [
+        "IDLE",
+        "IDLE",
+        "AGREE",
+        "AGREE",
+        "AGREE"
+      ]
+    },
+    {
+      "label": "lock behavioral",
+      "hash": "0x4cef9294985f940d5dd7d5df394f6e81125de0936b25026ad0b09164130d2148",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "mode": "NORMAL",
+      "validatorCount": 5,
+      "votes": [
+        "AGREE",
+        "IDLE",
+        "IDLE",
+        "AGREE",
+        "AGREE"
+      ]
+    },
+    {
+      "label": "create unsupported",
+      "hash": "0xd6373ff0ffa712e26349614d24a4c669390ee2900c63777b90dede75dc2c52f2",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "mode": "NORMAL",
+      "validatorCount": 5,
+      "votes": [
+        "AGREE",
+        "AGREE",
+        "AGREE",
+        "IDLE",
+        "AGREE"
+      ]
+    },
+    {
+      "label": "assess behavioral",
+      "hash": "0x29a951ab32fc2c1760429b9f697c021218225a5a092e22f97f84f268134252f1",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "mode": "NORMAL",
+      "validatorCount": 5,
+      "votes": [
+        "AGREE",
+        "AGREE",
+        "IDLE",
+        "IDLE",
+        "AGREE"
+      ]
+    },
+    {
+      "label": "lock unsupported",
+      "hash": "0x0a5fd7f78176192c43ad38aeccad811f2661712d0fa24a5ff7ccf46601d55829",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "mode": "NORMAL",
+      "validatorCount": 5,
+      "votes": [
+        "AGREE",
+        "IDLE",
+        "IDLE",
+        "AGREE",
+        "AGREE"
+      ]
+    },
+    {
+      "label": "independent challenge",
+      "hash": "0x1e1338188792dac4765688e4ea558de7963b54b3b923c1adcb4ef1bc40a31a0c",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "mode": "NORMAL",
+      "validatorCount": 5,
+      "votes": [
+        "AGREE",
+        "AGREE",
+        "IDLE",
+        "AGREE",
+        "IDLE"
+      ]
+    },
+    {
+      "label": "assess unsupported",
+      "hash": "0x33aadf2b39f29650cfe1480a47dc6246d73541df643c40c5114b67eb3b50adbc",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "mode": "NORMAL",
+      "validatorCount": 5,
+      "votes": [
+        "AGREE",
+        "AGREE",
+        "IDLE",
+        "AGREE",
+        "IDLE"
+      ]
+    },
+    {
+      "label": "reassess compatible",
+      "hash": "0x014d7ff5d0cf9e724e201fe77dffc86d37fe6df9f9dc418634816f7206a0afb8",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "mode": "NORMAL",
+      "validatorCount": 5,
+      "votes": [
+        "AGREE",
+        "DISAGREE",
+        "AGREE",
+        "AGREE",
+        "IDLE"
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "label": "Compatible update · challenged & reassessed",
+      "reviewId": "714518d5b2b8024b23e44cf6d492847c2c97f705dd314e4e95dafb75135265d9",
+      "expected": "COMPATIBLE",
+      "phase": "ASSESSED",
+      "challenge": "Confirm that adding the optional trace parameter preserves cursor pagination and the required response fields. Recheck this against the locked unchanged-behavior promise.",
+      "receipts": [
+        {
+          "challenge_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "challenger": "",
+          "engine": "APICompat/1.0",
+          "evidence_scope": "COMMIT_PINNED",
+          "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+          "quote": "Pagination, defaults, units, authentication, rate limits, error semantics and ordering are unchanged.",
+          "reason": "Candidate schema and pagination/default description match baseline; only an optional trace query parameter is added, which the policy allows. The notes explicitly state pagination, defaults, auth, rate limits, error semantics, and ordering are unchanged, so existing cursor clients need no code changes.",
+          "receipt_sha256": "94dc8caf5ec4fd83d4abe3e3623e57af3bd7298898df45f4016c2535690cb067",
+          "review_id": "714518d5b2b8024b23e44cf6d492847c2c97f705dd314e4e95dafb75135265d9",
+          "sequence": 1,
+          "source_verified": true,
+          "structural": {
+            "breaks": [],
+            "unsupported": []
+          },
+          "verdict": "COMPATIBLE"
+        },
+        {
+          "challenge_sha256": "0d734f0083f01b4c0c8829da652c3842c1903a458390a8dfc33a587fe849adcd",
+          "challenger": "0xcD72fA5B6A496d84B4A10bCFF31D3B7c12346a9e",
+          "engine": "APICompat/1.0",
+          "evidence_scope": "COMMIT_PINNED",
+          "previous": "94dc8caf5ec4fd83d4abe3e3623e57af3bd7298898df45f4016c2535690cb067",
+          "quote": "Pagination, defaults, units, authentication, rate limits, error semantics and ordering are unchanged. Existing cursor clients work unchanged. Adds only an optional trace parameter.",
+          "reason": "The candidate adds an optional 'trace' parameter without altering cursor pagination, default page size, or required response fields ('items', 'next_cursor'). No breaking changes to behavior or semantics.",
+          "receipt_sha256": "b7462b1b16bcf9c942f2cc5233ff8957339f8ee09bb0a4da4ddb1e7775eeb2d3",
+          "review_id": "714518d5b2b8024b23e44cf6d492847c2c97f705dd314e4e95dafb75135265d9",
+          "sequence": 2,
+          "source_verified": true,
+          "structural": {
+            "breaks": [],
+            "unsupported": []
+          },
+          "verdict": "COMPATIBLE"
+        }
+      ]
+    },
+    {
+      "label": "Behavioral breaking change",
+      "reviewId": "27b13e50b0b28ba83e1e62f511e46c41d69d4b98dcf84caad0420d9f77b15268",
+      "expected": "BREAKING",
+      "phase": "ASSESSED",
+      "challenge": "",
+      "receipts": [
+        {
+          "challenge_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "challenger": "",
+          "engine": "APICompat/1.0",
+          "evidence_scope": "COMMIT_PINNED",
+          "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+          "quote": "Existing cursor values are ignored. Clients must migrate before upgrading.",
+          "reason": "Replacing cursor pagination with page-number pagination breaks existing clients that follow next_cursor and send cursor values. Retaining the cursor parameter and response schema does not preserve pagination behavior; clients require code changes.",
+          "receipt_sha256": "a26a35bad6cc9f3d982174c4f83271dc390675d525ffcc922dc2c37f7df510bc",
+          "review_id": "27b13e50b0b28ba83e1e62f511e46c41d69d4b98dcf84caad0420d9f77b15268",
+          "sequence": 1,
+          "source_verified": true,
+          "structural": {
+            "breaks": [],
+            "unsupported": []
+          },
+          "verdict": "BREAKING"
+        }
+      ]
+    },
+    {
+      "label": "Unsupported schema · INCONCLUSIVE",
+      "reviewId": "56fd1c1c4acab9de7fd8956dbd5a3d0a8bfd6afab7651093c41deee68a183886",
+      "expected": "INCONCLUSIVE",
+      "phase": "ASSESSED",
+      "challenge": "",
+      "receipts": [
+        {
+          "challenge_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "challenger": "",
+          "engine": "APICompat/1.0",
+          "evidence_scope": "COMMIT_PINNED",
+          "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+          "quote": "",
+          "reason": "Changed or unresolved structures outside supported comparison subset",
+          "receipt_sha256": "22b83ddc047157674fea71c742c42c3a566a3dd2602896836348090f2d3c58c5",
+          "review_id": "56fd1c1c4acab9de7fd8956dbd5a3d0a8bfd6afab7651093c41deee68a183886",
+          "sequence": 1,
+          "source_verified": true,
+          "structural": {
+            "breaks": [],
+            "unsupported": [
+              "GET /parcels/200/application/json/oneOf"
+            ]
+          },
+          "verdict": "INCONCLUSIVE"
+        }
+      ]
+    }
+  ]
+}
